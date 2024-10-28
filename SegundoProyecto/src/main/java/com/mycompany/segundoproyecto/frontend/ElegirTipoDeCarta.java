@@ -27,13 +27,13 @@ public class ElegirTipoDeCarta extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnCartaEfecto = new javax.swing.JButton();
+        btnCartaEnergía = new javax.swing.JButton();
         btnCartaMonstruo = new javax.swing.JButton();
         btnCartaHechizo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnCartaEfecto.setText("Carta Efecto");
+        btnCartaEnergía.setText("Carta Energía");
 
         btnCartaMonstruo.setText("Carta Monstruo");
         btnCartaMonstruo.addActionListener(new java.awt.event.ActionListener() {
@@ -52,7 +52,7 @@ public class ElegirTipoDeCarta extends javax.swing.JFrame {
                 .addGap(185, 185, 185)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnCartaMonstruo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCartaEfecto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCartaEnergía, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCartaHechizo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
@@ -60,7 +60,7 @@ public class ElegirTipoDeCarta extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(107, 107, 107)
-                .addComponent(btnCartaEfecto)
+                .addComponent(btnCartaEnergía)
                 .addGap(18, 18, 18)
                 .addComponent(btnCartaMonstruo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -95,7 +95,7 @@ public class ElegirTipoDeCarta extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCartaEfecto;
+    private javax.swing.JButton btnCartaEnergía;
     private javax.swing.JButton btnCartaHechizo;
     private javax.swing.JButton btnCartaMonstruo;
     private javax.swing.JPanel jPanel1;

@@ -4,11 +4,13 @@
  */
 package com.mycompany.segundoproyecto.carta;
 
+import java.io.Serializable;
+
 /**
  *
  * @author fer
  */
-public abstract class Carta implements ICarta {
+public abstract class Carta implements ICarta, Serializable{
     protected String nombre;
     protected String tipo;
     protected int puntosVida;

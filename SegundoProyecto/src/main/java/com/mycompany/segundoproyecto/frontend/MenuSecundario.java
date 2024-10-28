@@ -62,6 +62,11 @@ public class MenuSecundario extends javax.swing.JFrame {
         btnCargarMazoPredet.setText("Cargar");
 
         btnEditarMazoPredet.setText("Editar");
+        btnEditarMazoPredet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarMazoPredetActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Cargar Mazo");
 
@@ -159,6 +164,11 @@ public class MenuSecundario extends javax.swing.JFrame {
             lblJugadorQueComienza.setText("Empieza Cpu");
         }
     }//GEN-LAST:event_btnLanzarMonedaActionPerformed
+
+    private void btnEditarMazoPredetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarMazoPredetActionPerformed
+     new EditorDeCartas().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnEditarMazoPredetActionPerformed
 
     private Juego juego;
 

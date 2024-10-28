@@ -4,8 +4,11 @@
  */
 package com.mycompany.segundoproyecto.frontend;
 
-import backend.Elemento;
-import backend.carta.CartaMonstruo;
+
+import com.mycompany.segundoproyecto.carta.AdministradorCartas;
+import com.mycompany.segundoproyecto.carta.CartaMonstruo;
+import com.mycompany.segundoproyecto.carta.Elemento;
+import java.io.IOException;
 
 /**
  *
@@ -62,7 +65,7 @@ public class EditorDeCartas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        panelEditor.setBackground(new java.awt.Color(51, 51, 51));
+        panelEditor.setBackground(new java.awt.Color(102, 102, 102));
 
         lblNombreCarta.setText("Nombre Carta");
 
@@ -74,13 +77,13 @@ public class EditorDeCartas extends javax.swing.JFrame {
 
         lblSubTipoCarta.setText("Sub Tipo");
 
-        boxSubTipoC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fuego", "Agua", "Item 3", "Item 4" }));
+        boxSubTipoC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fuego", "Agua", "Viento", "Tierra" }));
 
         lblPV.setText("Puntos de vida");
 
         lblFase.setText("Fase");
 
-        boxFase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        boxFase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Básico", "Evolución Fase 1", "Evolución Fase 2", "Evolución Fase 3" }));
 
         lblHabilidadesAtaque.setText("Habilidades de Ataque");
 
@@ -130,10 +133,8 @@ public class EditorDeCartas extends javax.swing.JFrame {
             .addGroup(panelVentanaLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(panelVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelVentanaLayout.createSequentialGroup()
-                        .addComponent(lblHabilidadVentana)
-                        .addGap(28, 28, 28)
-                        .addComponent(lblCosteVentana))
+                    .addComponent(lblCosteVentana)
+                    .addComponent(lblHabilidadVentana)
                     .addGroup(panelVentanaLayout.createSequentialGroup()
                         .addComponent(lblAtqVentana)
                         .addGap(42, 42, 42)
@@ -166,10 +167,10 @@ public class EditorDeCartas extends javax.swing.JFrame {
                     .addComponent(lblAtqVentana)
                     .addComponent(lblEnergiaVentana))
                 .addGap(37, 37, 37)
-                .addGroup(panelVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHabilidadVentana)
-                    .addComponent(lblCosteVentana))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addComponent(lblHabilidadVentana)
+                .addGap(18, 18, 18)
+                .addComponent(lblCosteVentana)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         btnGuardarCartta.setText("Guardar");
@@ -304,8 +305,8 @@ public class EditorDeCartas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-new EditorDeMazo().setVisible(true);
-   this.dispose();
+        new EditorDeMazo().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void txtNombreCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreCartaActionPerformed
@@ -313,12 +314,15 @@ new EditorDeMazo().setVisible(true);
     }//GEN-LAST:event_txtNombreCartaActionPerformed
 
     private void btnGuardarCarttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCarttaActionPerformed
-       
-        CartaMonstruo cartaMonstruo = new CartaMonstruo(txtNombreCarta.getText(), Elemento.FUEGO, PROPERTIES, NORMAL, PROPERTIES, rootPaneCheckingEnabled);
-                
+
+        CartaMonstruo cartaMonstruo = new CartaMonstruo(txtNombreCarta.getText(), Elemento.FUEGO.name(), PROPERTIES, NORMAL, "PROPERTIES", 1);
+        try {
+            AdministradorCartas.guardarCarta(cartaMonstruo);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }//GEN-LAST:event_btnGuardarCarttaActionPerformed
 
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxFase;

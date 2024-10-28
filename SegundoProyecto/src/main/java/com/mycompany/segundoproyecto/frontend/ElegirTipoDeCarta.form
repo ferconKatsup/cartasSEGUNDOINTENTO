@@ -48,7 +48,7 @@
                   <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="btnCartaMonstruo" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnCartaEfecto" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnCartaEnergía" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnCartaHechizo" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="168" max="32767" attributes="0"/>
@@ -59,7 +59,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
-                  <Component id="btnCartaEfecto" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCartaEnergía" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnCartaMonstruo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -70,9 +70,9 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnCartaEfecto">
+        <Component class="javax.swing.JButton" name="btnCartaEnerg&#xed;a">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Carta Efecto"/>
+            <Property name="text" type="java.lang.String" value="Carta Energ&#xed;a"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnCartaMonstruo">

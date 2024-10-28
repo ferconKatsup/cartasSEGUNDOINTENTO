@@ -1,6 +1,9 @@
 com\mycompany\segundoproyecto\carta\CartaEnergia.class
+com\mycompany\segundoproyecto\frontend\EditorDeCartaEnergia.class
+com\mycompany\segundoproyecto\frontend\EditorDeCartaHechizo$1.class
 com\mycompany\segundoproyecto\frontend\ElegirTipoDeCarta$1.class
 com\mycompany\segundoproyecto\frontend\MenuPrincipal.class
+com\mycompany\segundoproyecto\carta\Elemento.class
 com\mycompany\segundoproyecto\frontend\EditorDeMazo$1.class
 com\mycompany\segundoproyecto\jugador\Cpu.class
 com\mycompany\segundoproyecto\frontend\Jugador$1.class
@@ -14,6 +17,7 @@ com\mycompany\segundoproyecto\jugador\CpuTonta.class
 com\mycompany\segundoproyecto\frontend\EditorDeMazo$2.class
 com\mycompany\segundoproyecto\frontend\MenuSecundario$1.class
 com\mycompany\segundoproyecto\frontend\EditorDeCartas$2.class
+com\mycompany\segundoproyecto\frontend\EditorDeCartaHechizo.class
 com\mycompany\segundoproyecto\carta\CartaHechizo.class
 com\mycompany\segundoproyecto\carta\AdministradorCartas.class
 com\mycompany\segundoproyecto\frontend\EditorDeCartas.class
@@ -23,6 +27,8 @@ com\mycompany\segundoproyecto\carta\Carta.class
 com\mycompany\segundoproyecto\frontend\EditorDeMazo.class
 com\mycompany\segundoproyecto\carta\ICarta.class
 com\mycompany\segundoproyecto\carta\CartaMonstruo.class
+com\mycompany\segundoproyecto\frontend\EditorDeCartas$3.class
+com\mycompany\segundoproyecto\frontend\MenuSecundario$2.class
 com\mycompany\segundoproyecto\frontend\EditorDeCartas$1.class
 com\mycompany\segundoproyecto\carta\Mazo.class
 com\mycompany\segundoproyecto\frontend\Jugador.class

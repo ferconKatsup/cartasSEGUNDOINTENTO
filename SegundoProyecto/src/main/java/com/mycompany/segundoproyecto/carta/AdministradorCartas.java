@@ -19,7 +19,7 @@ import java.io.ObjectOutputStream;
 public class AdministradorCartas {
     
     public static void guardarCarta(Carta carta) throws IOException {
-        try (FileOutputStream fos = new FileOutputStream("cartas/"+carta.nombre+".bin"); 
+        try (FileOutputStream fos = new FileOutputStream("./Cartas/"+carta.nombre+".bin"); 
             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(carta);
         }
