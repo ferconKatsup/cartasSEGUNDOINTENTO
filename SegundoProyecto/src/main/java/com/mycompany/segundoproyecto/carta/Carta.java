@@ -13,6 +13,7 @@ public abstract class Carta implements ICarta {
     protected String tipo;
     protected int puntosVida;
     protected int costoRetirada;
+    protected Carta siguienteCarta;
 
     // Constructor
     public Carta(String nombre, String tipo, int puntosVida, int costoRetirada) {

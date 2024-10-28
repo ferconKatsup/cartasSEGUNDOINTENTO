@@ -43,7 +43,7 @@ public class EditorDeMazo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 0, 102));
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
         lblTipoDeCarta.setText("Tipo de Carta");
 
@@ -77,7 +77,7 @@ public class EditorDeMazo extends javax.swing.JFrame {
 
         lblPreguntaCrearCartas.setText("¿No tienes Cartas?  ¡Crea tus propias Cartas!");
 
-        btnMenuCrearCarta.setText("Editor De Cartas");
+        btnMenuCrearCarta.setText("Crear Carta");
         btnMenuCrearCarta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuCrearCartaActionPerformed(evt);
@@ -179,10 +179,10 @@ public class EditorDeMazo extends javax.swing.JFrame {
     }//GEN-LAST:event_boxTipoDeCartaActionPerformed
 
     private void btnMenuCrearCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuCrearCartaActionPerformed
-        // TODO add your handling code here:
-        
-        new EditorDeCartas().setVisible(true);
+      
+        new ElegirTipoDeCarta().setVisible(true);
           this.dispose();
+      
     }//GEN-LAST:event_btnMenuCrearCartaActionPerformed
 
     private void btnRegresarAMenuSecundarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarAMenuSecundarioActionPerformed

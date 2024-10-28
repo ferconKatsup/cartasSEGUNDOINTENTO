@@ -4,6 +4,12 @@
  */
 package com.mycompany.segundoproyecto.frontend;
 
+import com.mycompany.segundoproyecto.Juego;
+import com.mycompany.segundoproyecto.jugador.Cpu;
+import com.mycompany.segundoproyecto.jugador.CpuLista;
+import com.mycompany.segundoproyecto.jugador.CpuTonta;
+import com.mycompany.segundoproyecto.jugador.JugadorHumano;
+
 /**
  *
  * @author fer
@@ -48,7 +54,7 @@ public class Jugador extends javax.swing.JFrame {
             }
         });
 
-        comboBoxOponente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxOponente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ia Tonta", "Ia Lista" }));
         comboBoxOponente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxOponenteActionPerformed(evt);
@@ -71,9 +77,9 @@ public class Jugador extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboBoxOponente, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(JugdorLayout.createSequentialGroup()
-                        .addGap(187, 187, 187)
+                        .addGap(188, 188, 188)
                         .addComponent(btnSiguiente)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         JugdorLayout.setVerticalGroup(
             JugdorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,41 +88,57 @@ public class Jugador extends javax.swing.JFrame {
                 .addGroup(JugdorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblIngresaNombre)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(JugdorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOponente)
                     .addComponent(comboBoxOponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addComponent(btnSiguiente)
-                .addGap(10, 10, 10))
+                .addGap(44, 44, 44))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Jugdor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Jugdor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Jugdor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Jugdor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-       new MenuSecundario().setVisible(true);
+
        
+        JugadorHumano jugadorHumano = new JugadorHumano(txtNombreJugador.getText());
+        
+        Cpu cpu = null;
+        
+        if (comboBoxOponente.getSelectedIndex() == 0) {
+            cpu = new CpuTonta();
+        } else {
+           cpu = new CpuLista();
+        }
+        
+        Juego juego = new Juego(jugadorHumano ,cpu);
+        
+        
+        //entra a la siguiente ventana 
+        MenuSecundario menuSecundario = new MenuSecundario();
+       menuSecundario.setJuego(juego);
+       menuSecundario.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
+  
     private void comboBoxOponenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxOponenteActionPerformed
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_comboBoxOponenteActionPerformed
 
 

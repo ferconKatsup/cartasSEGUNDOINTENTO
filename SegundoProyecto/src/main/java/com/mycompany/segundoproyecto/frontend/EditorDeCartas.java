@@ -4,6 +4,9 @@
  */
 package com.mycompany.segundoproyecto.frontend;
 
+import backend.Elemento;
+import backend.carta.CartaMonstruo;
+
 /**
  *
  * @author fer
@@ -29,8 +32,6 @@ public class EditorDeCartas extends javax.swing.JFrame {
         panelEditor = new javax.swing.JPanel();
         lblNombreCarta = new javax.swing.JLabel();
         txtNombreCarta = new javax.swing.JTextField();
-        lblTipoCarta = new javax.swing.JLabel();
-        boxTipoC = new javax.swing.JComboBox<>();
         lblSubTipoCarta = new javax.swing.JLabel();
         boxSubTipoC = new javax.swing.JComboBox<>();
         lblPV = new javax.swing.JLabel();
@@ -61,7 +62,7 @@ public class EditorDeCartas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        panelEditor.setBackground(new java.awt.Color(102, 102, 102));
+        panelEditor.setBackground(new java.awt.Color(51, 51, 51));
 
         lblNombreCarta.setText("Nombre Carta");
 
@@ -71,13 +72,9 @@ public class EditorDeCartas extends javax.swing.JFrame {
             }
         });
 
-        lblTipoCarta.setText("Tipo");
-
-        boxTipoC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         lblSubTipoCarta.setText("Sub Tipo");
 
-        boxSubTipoC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        boxSubTipoC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fuego", "Agua", "Item 3", "Item 4" }));
 
         lblPV.setText("Puntos de vida");
 
@@ -114,7 +111,7 @@ public class EditorDeCartas extends javax.swing.JFrame {
             .addGap(0, 167, Short.MAX_VALUE)
         );
 
-        lblTipoVentana.setText("Tipo");
+        lblTipoVentana.setText("Mounstro");
 
         lblPvidaVentana.setText("PV");
 
@@ -176,6 +173,11 @@ public class EditorDeCartas extends javax.swing.JFrame {
         );
 
         btnGuardarCartta.setText("Guardar");
+        btnGuardarCartta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarCarttaActionPerformed(evt);
+            }
+        });
 
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -189,44 +191,46 @@ public class EditorDeCartas extends javax.swing.JFrame {
         panelEditorLayout.setHorizontalGroup(
             panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditorLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelEditorLayout.createSequentialGroup()
-                        .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblTipoCarta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblNombreCarta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(boxTipoC, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombreCarta, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelEditorLayout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblSubTipoCarta)
-                                    .addComponent(boxSubTipoC, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(boxFase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(panelEditorLayout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addComponent(lblFase)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(spinerPV, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblPV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(lblHabilidadesAtaque)
-                    .addGroup(panelEditorLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
                         .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(lblAccion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblHabilidad, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(boxHabilidad, javax.swing.GroupLayout.Alignment.LEADING, 0, 66, Short.MAX_VALUE))
-                            .addComponent(spinnerAccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(46, 46, 46)
+                                .addComponent(spinerPV, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblPV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lblHabilidadesAtaque)
+                            .addGroup(panelEditorLayout.createSequentialGroup()
+                                .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(lblAccion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblHabilidad, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(boxHabilidad, javax.swing.GroupLayout.Alignment.LEADING, 0, 66, Short.MAX_VALUE))
+                                    .addComponent(spinnerAccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(46, 46, 46)
+                                .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(spinnerRetirada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblAtq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(spinnerAtq)
+                                        .addComponent(lblCostoRetirada))))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditorLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(spinnerRetirada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblAtq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(spinnerAtq)
-                                .addComponent(lblCostoRetirada)))))
+                            .addComponent(lblSubTipoCarta)
+                            .addGroup(panelEditorLayout.createSequentialGroup()
+                                .addComponent(lblNombreCarta)
+                                .addGap(41, 41, 41)
+                                .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNombreCarta, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(panelEditorLayout.createSequentialGroup()
+                                        .addGap(16, 16, 16)
+                                        .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(boxFase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(panelEditorLayout.createSequentialGroup()
+                                                .addGap(14, 14, 14)
+                                                .addComponent(lblFase))))))
+                            .addComponent(boxSubTipoC, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)))
                 .addGap(36, 36, 36)
                 .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelEditorLayout.createSequentialGroup()
@@ -245,15 +249,11 @@ public class EditorDeCartas extends javax.swing.JFrame {
                         .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNombreCarta)
                             .addComponent(txtNombreCarta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTipoCarta)
-                            .addComponent(lblSubTipoCarta))
-                        .addGap(12, 12, 12)
-                        .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(boxTipoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(boxSubTipoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblSubTipoCarta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boxSubTipoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
                         .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblPV)
                             .addComponent(lblFase))
@@ -261,9 +261,9 @@ public class EditorDeCartas extends javax.swing.JFrame {
                         .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(spinerPV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(boxFase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
-                        .addComponent(lblHabilidadesAtaque)
                         .addGap(18, 18, 18)
+                        .addComponent(lblHabilidadesAtaque)
+                        .addGap(36, 36, 36)
                         .addGroup(panelEditorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblHabilidad)
                             .addComponent(lblAtq))
@@ -312,13 +312,18 @@ new EditorDeMazo().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreCartaActionPerformed
 
+    private void btnGuardarCarttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCarttaActionPerformed
+       
+        CartaMonstruo cartaMonstruo = new CartaMonstruo(txtNombreCarta.getText(), Elemento.FUEGO, PROPERTIES, NORMAL, PROPERTIES, rootPaneCheckingEnabled);
+                
+    }//GEN-LAST:event_btnGuardarCarttaActionPerformed
+
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxFase;
     private javax.swing.JComboBox<String> boxHabilidad;
     private javax.swing.JComboBox<String> boxSubTipoC;
-    private javax.swing.JComboBox<String> boxTipoC;
     private javax.swing.JButton btnGuardarCartta;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JPanel jPanel1;
@@ -338,7 +343,6 @@ new EditorDeMazo().setVisible(true);
     private javax.swing.JLabel lblPV;
     private javax.swing.JLabel lblPvidaVentana;
     private javax.swing.JLabel lblSubTipoCarta;
-    private javax.swing.JLabel lblTipoCarta;
     private javax.swing.JLabel lblTipoVentana;
     private javax.swing.JPanel panelEditor;
     private javax.swing.JPanel panelVentana;

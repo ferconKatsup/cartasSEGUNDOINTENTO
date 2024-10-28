@@ -39,7 +39,7 @@
     <Container class="javax.swing.JPanel" name="panelEditor">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="66" type="rgb"/>
+          <Color blue="33" green="33" red="33" type="rgb"/>
         </Property>
       </Properties>
 
@@ -47,56 +47,60 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblTipoCarta" max="32767" attributes="0"/>
-                                  <Component id="lblNombreCarta" max="32767" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="spinerPV" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lblPV" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="boxTipoC" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtNombreCarta" min="-2" pref="137" max="-2" attributes="0"/>
+                              <Component id="lblHabilidadesAtaque" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblSubTipoCarta" min="-2" max="-2" attributes="0"/>
-                                      <Component id="boxSubTipoC" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
-                                      <Component id="boxFase" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                          <Component id="lblFase" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="lblAccion" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="lblHabilidad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="boxHabilidad" alignment="0" pref="66" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="spinnerAccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="spinnerRetirada" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lblAtq" max="32767" attributes="0"/>
+                                          <Component id="spinnerAtq" max="32767" attributes="0"/>
+                                          <Component id="lblCostoRetirada" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="spinerPV" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblPV" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Component id="lblHabilidadesAtaque" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="lblAccion" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lblHabilidad" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="boxHabilidad" alignment="0" pref="66" max="32767" attributes="0"/>
+                              <Component id="lblSubTipoCarta" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="lblNombreCarta" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtNombreCarta" min="-2" pref="137" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="boxFase" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <Component id="lblFase" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <Component id="spinnerAccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="boxSubTipoC" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="spinnerRetirada" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblAtq" max="32767" attributes="0"/>
-                                  <Component id="spinnerAtq" max="32767" attributes="0"/>
-                                  <Component id="lblCostoRetirada" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
@@ -122,17 +126,11 @@
                               <Component id="lblNombreCarta" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtNombreCarta" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblTipoCarta" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblSubTipoCarta" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="boxTipoC" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="boxSubTipoC" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lblSubTipoCarta" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="boxSubTipoC" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblPV" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblFase" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -142,9 +140,9 @@
                               <Component id="spinerPV" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="boxFase" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="lblHabilidadesAtaque" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="lblHabilidadesAtaque" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblHabilidad" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblAtq" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -188,26 +186,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreCartaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblTipoCarta">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tipo"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="boxTipoC">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblSubTipoCarta">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sub Tipo"/>
@@ -217,8 +195,8 @@
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
+                <StringItem index="0" value="Fuego"/>
+                <StringItem index="1" value="Agua"/>
                 <StringItem index="2" value="Item 3"/>
                 <StringItem index="3" value="Item 4"/>
               </StringArray>
@@ -396,7 +374,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="lblTipoVentana">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Tipo"/>
+                <Property name="text" type="java.lang.String" value="Mounstro"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblPvidaVentana">
@@ -430,6 +408,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarCarttaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnRegresar">
           <Properties>
